@@ -79,11 +79,6 @@
             line-height: 1.15;
             letter-spacing: -0.01em;
         }
-
-        /* Trava de scroll pro menu mobile */
-        body.menu-open {
-            overflow: hidden;
-        }
     </style>
 </head>
 
@@ -105,25 +100,28 @@
                 </div>
 
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-brand-wine-dark hover:text-brand-wine focus:outline-none p-2 transition z-[110]" aria-label="Menu">
-                        <i class="fas fa-bars text-2xl" id="menu-icon"></i>
+                    <button id="mobile-menu-btn" class="text-brand-wine-dark hover:text-brand-wine focus:outline-none p-2 transition" aria-label="Menu">
+                        <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
         </div>
-
-        <div id="mobile-menu" class="fixed inset-0 bg-brand-offwhite z-[100] flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out hidden">
-            <div class="space-y-8 flex flex-col items-center text-center w-full px-6">
-                <a href="#protocolo" class="mobile-link text-2xl text-brand-wine-dark font-serif hover:text-brand-wine transition">O Método</a>
-                <a href="#sobre" class="mobile-link text-2xl text-brand-wine-dark font-serif hover:text-brand-wine transition">A Especialista</a>
-                <a href="#portfolio" class="mobile-link text-2xl text-brand-wine-dark font-serif hover:text-brand-wine transition">Resultados</a>
-                <a href="#servicos" class="mobile-link text-2xl text-brand-wine-dark font-serif hover:text-brand-wine transition">Especialidades</a>
-                <a href="https://wa.me/message/E22IIWJYFPYEO1" target="_blank" class="mobile-link mt-8 bg-brand-wine text-white px-8 py-4 rounded-full font-bold w-full max-w-[250px] hover:bg-brand-wine-dark transition duration-300 shadow-xl text-xs uppercase tracking-widest">
-                    Agendar Consulta
-                </a>
-            </div>
-        </div>
     </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-brand-offwhite z-[100] flex flex-col items-center justify-center transform translate-x-full transition-transform duration-300 ease-in-out">
+        <button id="close-menu-btn" class="absolute top-6 right-6 text-brand-wine-dark hover:text-brand-wine focus:outline-none p-4 transition" aria-label="Fechar menu">
+            <i class="fas fa-times text-3xl"></i>
+        </button>
+        <div class="space-y-8 flex flex-col items-center text-center w-full px-6">
+            <a href="#protocolo" class="mobile-link text-2xl text-brand-wine-dark font-serif hover:text-brand-wine transition">O Método</a>
+            <a href="#sobre" class="mobile-link text-2xl text-brand-wine-dark font-serif hover:text-brand-wine transition">A Especialista</a>
+            <a href="#portfolio" class="mobile-link text-2xl text-brand-wine-dark font-serif hover:text-brand-wine transition">Resultados</a>
+            <a href="#servicos" class="mobile-link text-2xl text-brand-wine-dark font-serif hover:text-brand-wine transition">Especialidades</a>
+            <a href="https://wa.me/message/E22IIWJYFPYEO1" target="_blank" class="mobile-link mt-8 bg-brand-wine-dark text-white px-8 py-4 rounded-full font-bold w-full max-w-[250px] hover:bg-brand-wine transition duration-300 shadow-xl text-xs uppercase tracking-widest">
+                Agendar Consulta
+            </a>
+        </div>
+    </div>
 
     <section id="hero" class="full-screen-hero hero-parallax relative flex flex-col items-center justify-center bg-[url('https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center px-4 md:px-6">
         <div class="absolute inset-0 hero-overlay"></div>
@@ -133,7 +131,7 @@
                 <span class="text-brand-wine font-bold tracking-[0.25em] uppercase text-[10px] md:text-xs mb-4 md:mb-5 opacity-90 block">Beleza & Spa</span>
 
                 <h1 class="hero-title font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-brand-wine-dark mb-6 md:mb-6 max-w-[95%] md:max-w-3xl mx-auto">
-                    Ciência e Sofisticação na <br>
+                    Ciência e Sofisticação na <br class="hidden sm:block">
                     <span class="italic font-normal text-brand-wine">Recuperação Capilar</span>
                 </h1>
 
@@ -388,46 +386,29 @@
                 duration: 800,
             });
 
-            // Controle do Menu Mobile
+            // Controle Definitivo do Menu Mobile
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
-            const menuIcon = document.getElementById('menu-icon');
             const mobileLinks = document.querySelectorAll('.mobile-link');
             const body = document.body;
 
             function toggleMenu() {
-                const isHidden = mobileMenu.classList.contains('hidden');
+                const isClosed = mobileMenu.classList.contains('translate-x-full');
                 
-                if (isHidden) {
-                    // Abrir Menu
-                    mobileMenu.classList.remove('hidden');
-                    // Pequeno delay para permitir que o display:flex seja aplicado antes da opacidade
-                    setTimeout(() => {
-                        mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
-                        mobileMenu.classList.add('flex', 'opacity-100', 'pointer-events-auto');
-                    }, 10);
-                    
-                    menuIcon.classList.remove('fa-bars');
-                    menuIcon.classList.add('fa-times');
-                    body.classList.add('menu-open');
+                if (isClosed) {
+                    // Abrir Menu: Remove a trava de translação e bloqueia o scroll da página
+                    mobileMenu.classList.remove('translate-x-full');
+                    body.classList.add('overflow-hidden');
                 } else {
-                    // Fechar Menu
-                    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
-                    mobileMenu.classList.add('opacity-0', 'pointer-events-none');
-                    
-                    menuIcon.classList.remove('fa-times');
-                    menuIcon.classList.add('fa-bars');
-                    body.classList.remove('menu-open');
-                    
-                    // Aguarda o fim da transição de opacidade para ocultar o elemento
-                    setTimeout(() => {
-                        mobileMenu.classList.add('hidden');
-                        mobileMenu.classList.remove('flex');
-                    }, 300);
+                    // Fechar Menu: Volta a translação pra direita e devolve o scroll da página
+                    mobileMenu.classList.add('translate-x-full');
+                    body.classList.remove('overflow-hidden');
                 }
             }
 
             mobileMenuBtn.addEventListener('click', toggleMenu);
+            closeMenuBtn.addEventListener('click', toggleMenu);
 
             mobileLinks.forEach(link => {
                 link.addEventListener('click', toggleMenu);
