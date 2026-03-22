@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samila Bergami | Especialista em Recuperação Capilar</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -41,13 +44,13 @@
             border: 1px solid rgba(255, 255, 255, 0.5);
             box-shadow: 0 8px 32px 0 rgba(139, 41, 66, 0.05);
         }
-        
+
         .fade-element {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        
+
         .fade-element.visible {
             opacity: 1;
             transform: translateY(0);
@@ -62,28 +65,42 @@
             height: 100dvh;
         }
 
-        /* Ajuste fino para o título não quebrar de forma estranha */
         .hero-title {
             line-height: 1.1;
             letter-spacing: -0.02em;
         }
+
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
     </style>
 </head>
+
 <body class="font-sans text-brand-gray bg-brand-offwhite antialiased overflow-x-hidden">
 
     <nav class="fixed w-full z-50 transition-all duration-300 glass" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 md:h-20">
                 <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <span class="font-serif text-xl md:text-2xl font-bold text-brand-wine-dark tracking-wide">Samila Bergami</span>
+                    <span class="font-serif text-xl md:text-2xl font-bold text-brand-wine-dark tracking-wide">Samila
+                        Bergami</span>
                 </div>
-                
+
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#protocolo" class="text-brand-wine-dark hover:text-brand-wine transition-colors font-medium">Protocolo SB</a>
-                    <a href="#sobre" class="text-brand-wine-dark hover:text-brand-wine transition-colors font-medium">A Especialista</a>
-                    <a href="#portfolio" class="text-brand-wine-dark hover:text-brand-wine transition-colors font-medium">Resultados</a>
-                    <a href="#servicos" class="text-brand-wine-dark hover:text-brand-wine transition-colors font-medium">Serviços</a>
-                    <a href="https://wa.me/message/E22IIWJYFPYEO1" target="_blank" class="bg-brand-wine text-white px-6 py-2 rounded-full hover:bg-brand-wine-dark transition-all shadow-md">Agendar Avaliação</a>
+                    <a href="#protocolo"
+                        class="text-brand-wine-dark hover:text-brand-wine transition-colors font-medium">Protocolo
+                        SB</a>
+                    <a href="#sobre" class="text-brand-wine-dark hover:text-brand-wine transition-colors font-medium">A
+                        Especialista</a>
+                    <a href="#portfolio"
+                        class="text-brand-wine-dark hover:text-brand-wine transition-colors font-medium">Resultados</a>
+                    <a href="#servicos"
+                        class="text-brand-wine-dark hover:text-brand-wine transition-colors font-medium">Serviços</a>
+                    <a href="https://wa.me/message/E22IIWJYFPYEO1" target="_blank"
+                        class="bg-brand-wine text-white px-6 py-2 rounded-full hover:bg-brand-wine-dark transition-all shadow-md">Agendar
+                        Avaliação</a>
                 </div>
 
                 <div class="md:hidden flex items-center">
@@ -94,8 +111,10 @@
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden fixed inset-0 z-[60] bg-brand-offwhite flex-col justify-center items-center">
-            <button id="close-menu-btn" class="absolute top-6 right-6 text-brand-wine-dark hover:text-brand-wine focus:outline-none p-4">
+        <div id="mobile-menu"
+            class="hidden fixed inset-0 z-[60] bg-brand-offwhite flex-col justify-center items-center">
+            <button id="close-menu-btn"
+                class="absolute top-6 right-6 text-brand-wine-dark hover:text-brand-wine focus:outline-none p-4">
                 <i class="fas fa-times text-3xl"></i>
             </button>
             <div class="space-y-8 flex flex-col items-center text-center w-full px-6">
@@ -103,71 +122,88 @@
                 <a href="#sobre" class="mobile-link text-2xl text-brand-wine-dark font-serif">A Especialista</a>
                 <a href="#portfolio" class="mobile-link text-2xl text-brand-wine-dark font-serif">Resultados</a>
                 <a href="#servicos" class="mobile-link text-2xl text-brand-wine-dark font-serif">Serviços</a>
-                <a href="https://wa.me/message/E22IIWJYFPYEO1" target="_blank" class="mt-8 bg-brand-wine-dark text-white px-8 py-4 rounded-full font-bold w-full max-w-[250px] hover:bg-brand-wine transition-all shadow-lg text-xs uppercase tracking-widest">Agendar Consulta</a>
+                <a href="https://wa.me/message/E22IIWJYFPYEO1" target="_blank"
+                    class="mt-8 bg-brand-wine-dark text-white px-8 py-4 rounded-full font-bold w-full max-w-[250px] hover:bg-brand-wine transition-all shadow-lg text-xs uppercase tracking-widest">Agendar
+                    Consulta</a>
             </div>
         </div>
     </nav>
 
-    <section id="hero" class="full-screen-hero relative flex flex-col items-center justify-center bg-[url('https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center overflow-hidden px-4">
+    <section id="hero"
+        class="full-screen-hero relative flex flex-col items-center justify-center bg-[url('https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center overflow-hidden px-6">
         <div class="absolute inset-0 hero-overlay"></div>
-        
-        <div class="relative z-10 w-full max-w-5xl mx-auto text-center">
+
+        <div class="relative z-10 w-full max-w-4xl mx-auto text-center">
             <div class="fade-element flex flex-col items-center">
-                <span class="text-brand-wine font-bold tracking-[0.2em] uppercase text-[10px] md:text-xs mb-6 opacity-80">Beleza & Spa</span>
-                
-                <h1 class="hero-title font-serif text-4xl md:text-6xl lg:text-7xl text-brand-wine-dark mb-8">
-                    Ciência e Sofisticação na <br>
-                    <span class="italic font-normal">Recuperação Capilar</span>
+                <span
+                    class="text-brand-wine font-bold tracking-[0.2em] uppercase text-[10px] md:text-xs mb-4 md:mb-6 opacity-80">Beleza
+                    & Spa</span>
+
+                <h1
+                    class="hero-title font-serif text-3xl md:text-6xl lg:text-7xl text-brand-wine-dark mb-6 md:mb-8 max-w-3xl">
+                    Ciência e Sofisticação na <br class="hidden md:block">
+                    <span class="italic font-normal text-brand-wine">Recuperação Capilar</span>
                 </h1>
-                
-                <p class="text-sm md:text-lg lg:text-xl text-brand-gray/90 mb-12 leading-relaxed max-w-2xl mx-auto font-light">
-                    Especialista em Tricologia e criadora do exclusivo Protocolo SB em Ipatinga. Cuidamos da saúde real do seu couro cabeludo e fios.
+
+                <p
+                    class="text-sm md:text-lg lg:text-xl text-brand-gray/90 mb-8 md:mb-12 leading-relaxed max-w-2xl mx-auto font-light px-2 md:px-0">
+                    Especialista em Tricologia e criadora do exclusivo Protocolo SB em Ipatinga. Cuidamos da saúde real
+                    do seu couro cabeludo e fios.
                 </p>
-                
+
                 <div class="flex justify-center w-full">
-                    <a href="https://wa.me/message/E22IIWJYFPYEO1" target="_blank" class="bg-white text-brand-wine-dark border border-white/50 flex items-center justify-center gap-3 px-10 py-4 rounded-full font-semibold hover:bg-brand-wine hover:text-white hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 shadow-xl text-xs md:text-sm uppercase tracking-widest">
-                        <i class="fab fa-whatsapp text-xl text-[#25D366]"></i> Agendar Transformação no WhatsApp
+                    <a href="https://wa.me/message/E22IIWJYFPYEO1" target="_blank"
+                        class="bg-white text-brand-wine-dark border border-white/50 flex items-center justify-center gap-3 px-8 md:px-10 py-4 rounded-full font-semibold hover:bg-brand-wine hover:text-white hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 shadow-xl text-[11px] md:text-sm uppercase tracking-widest w-full md:w-auto">
+                        <i class="fab fa-whatsapp text-lg md:text-xl text-[#25D366]"></i> Agendar no WhatsApp
                     </a>
                 </div>
             </div>
         </div>
-        
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
-            <i class="fas fa-chevron-down text-brand-wine text-xl"></i>
+
+        <div class="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
+            <i class="fas fa-chevron-down text-brand-wine text-lg md:text-xl"></i>
         </div>
     </section>
 
     <section id="protocolo" class="py-20 bg-brand-pink">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 fade-element">
-                <h2 class="font-serif text-2xl md:text-4xl text-brand-wine-dark mb-4 tracking-tight">O Exclusivo Protocolo SB</h2>
+                <h2 class="font-serif text-2xl md:text-4xl text-brand-wine-dark mb-4 tracking-tight">O Exclusivo
+                    Protocolo SB</h2>
                 <div class="w-16 h-1 bg-brand-wine mx-auto mb-6 opacity-30"></div>
                 <p class="text-brand-gray text-base md:text-lg font-light leading-relaxed">
-                    Uma abordagem baseada em química e ciência. Não tratamos apenas a estética superficial, mas devolvemos a vitalidade desde a raiz estrutural do fio.
+                    Uma abordagem baseada em química e ciência. Não tratamos apenas a estética superficial, mas
+                    devolvemos a vitalidade desde a raiz estrutural do fio.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="glass p-8 rounded-2xl text-center fade-element">
-                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-brand-wine">
+                    <div
+                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-brand-wine">
                         <i class="fas fa-microscope text-2xl"></i>
                     </div>
                     <h3 class="font-serif text-xl text-brand-wine-dark font-semibold mb-3">Análise Científica</h3>
-                    <p class="text-sm text-brand-gray leading-relaxed font-light">Avaliação profunda do couro cabeludo utilizando princípios tricológicos para um diagnóstico exato.</p>
+                    <p class="text-sm text-brand-gray leading-relaxed font-light">Avaliação profunda do couro cabeludo
+                        utilizando princípios tricológicos para um diagnóstico exato.</p>
                 </div>
                 <div class="glass p-8 rounded-2xl text-center fade-element" style="transition-delay: 100ms;">
-                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-brand-wine">
+                    <div
+                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-brand-wine">
                         <i class="fas fa-flask text-2xl"></i>
                     </div>
                     <h3 class="font-serif text-xl text-brand-wine-dark font-semibold mb-3">Base Química</h3>
-                    <p class="text-sm text-brand-gray leading-relaxed font-light">Combinação precisa de ativos e tratamentos, respeitando a biologia do seu cabelo de forma personalizada.</p>
+                    <p class="text-sm text-brand-gray leading-relaxed font-light">Combinação precisa de ativos e
+                        tratamentos, respeitando a biologia do seu cabelo de forma personalizada.</p>
                 </div>
                 <div class="glass p-8 rounded-2xl text-center fade-element" style="transition-delay: 200ms;">
-                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-brand-wine">
+                    <div
+                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm text-brand-wine">
                         <i class="fas fa-leaf text-2xl"></i>
                     </div>
                     <h3 class="font-serif text-xl text-brand-wine-dark font-semibold mb-3">Recuperação Real</h3>
-                    <p class="text-sm text-brand-gray leading-relaxed font-light">Foco na saúde contínua, estimulando o crescimento capilar forte e o fim de quedas e alopecias.</p>
+                    <p class="text-sm text-brand-gray leading-relaxed font-light">Foco na saúde contínua, estimulando o
+                        crescimento capilar forte e o fim de quedas e alopecias.</p>
                 </div>
             </div>
         </div>
@@ -177,25 +213,40 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row items-center gap-16 md:gap-24">
                 <div class="w-full lg:w-1/2 fade-element flex justify-center">
-                    <div class="relative w-full max-w-md">
-                        <div class="absolute top-6 left-6 w-full h-full bg-brand-pink rounded-tl-[100px] rounded-br-[100px] -z-10 opacity-50"></div>
-                        <div class="absolute -bottom-6 -left-6 w-full h-full border border-brand-wine/20 rounded-tl-[100px] rounded-br-[100px] -z-10"></div>
-                        <img src="img/samilabergami2.webp" alt="Samila Bergami" class="rounded-tl-[100px] rounded-br-[100px] shadow-2xl w-full object-cover h-[550px] relative z-10">
+                    <div class="relative w-full max-w-md px-4 md:px-0">
+                        <div
+                            class="absolute top-6 left-6 w-full h-full bg-brand-pink rounded-tl-[100px] rounded-br-[100px] -z-10 opacity-50">
+                        </div>
+                        <div
+                            class="absolute -bottom-6 -left-6 w-full h-full border border-brand-wine/20 rounded-tl-[100px] rounded-br-[100px] -z-10">
+                        </div>
+                        <img src="img/samilabergami2.webp" alt="Samila Bergami"
+                            class="rounded-tl-[100px] rounded-br-[100px] shadow-2xl w-full object-cover h-[450px] md:h-[550px] relative z-10">
                     </div>
                 </div>
                 <div class="w-full lg:w-1/2 fade-element">
-                    <span class="text-brand-wine font-bold tracking-widest text-xs uppercase mb-4 block opacity-60">Tricologia Avançada</span>
-                    <h2 class="font-serif text-4xl md:text-5xl text-brand-wine-dark mb-6">Samila Bergami</h2>
-                    <p class="text-brand-wine-dark/70 font-medium uppercase tracking-widest text-xs mb-8 border-l-2 border-brand-wine pl-4">Cabeleireira | Tricologista | Química</p>
-                    <div class="space-y-6 text-brand-gray text-base md:text-lg leading-relaxed font-light">
+                    <span
+                        class="text-brand-wine font-bold tracking-widest text-[10px] md:text-xs uppercase mb-4 block opacity-60">Tricologia
+                        Avançada</span>
+                    <h2 class="font-serif text-3xl md:text-5xl text-brand-wine-dark mb-6">Samila Bergami</h2>
+                    <p
+                        class="text-brand-wine-dark/70 font-medium uppercase tracking-widest text-[10px] md:text-xs mb-8 border-l-2 border-brand-wine pl-4">
+                        Cabeleireira | Tricologista | Química</p>
+                    <div class="space-y-6 text-brand-gray text-sm md:text-lg leading-relaxed font-light">
                         <p>
-                            Apaixonada pela verdadeira saúde capilar, Samila uniu a arte de ser cabeleireira ao rigor científico da Tricologia e da Química. Essa formação tríplice permite enxergar além da estética, tratando a raiz dos problemas.
+                            Apaixonada pela verdadeira saúde capilar, Samila uniu a arte de ser cabeleireira ao rigor
+                            científico da Tricologia e da Química. Essa formação tríplice permite enxergar além da
+                            estética, tratando a raiz dos problemas.
                         </p>
                         <p>
-                            Idealizadora do <strong>Beleza & Spa</strong> e criadora do exclusivo <strong>Protocolo SB</strong>, seu trabalho é focado em entregar resultados reais para quem sofre com alopecias, afinamento e queda capilar profunda.
+                            Idealizadora do <strong>Beleza & Spa</strong> e criadora do exclusivo <strong>Protocolo
+                                SB</strong>, seu trabalho é focado em entregar resultados reais para quem sofre com
+                            alopecias, afinamento e queda capilar profunda.
                         </p>
                         <p>
-                            Além do atendimento clínico de alto padrão, Samila desenvolveu sua própria linha <strong>Home Care</strong>, garantindo que o cuidado sofisticado e seguro se estenda até a casa de suas pacientes.
+                            Além do atendimento clínico de alto padrão, Samila desenvolveu sua própria linha
+                            <strong>Home Care</strong>, garantindo que o cuidado sofisticado e seguro se estenda até a
+                            casa de suas pacientes.
                         </p>
                     </div>
                 </div>
@@ -206,7 +257,8 @@
     <section id="portfolio" class="py-24 bg-brand-pink">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 fade-element">
-                <h2 class="font-serif text-3xl md:text-4xl text-brand-wine-dark mb-4 tracking-tight">Resultados Clínicos</h2>
+                <h2 class="font-serif text-3xl md:text-4xl text-brand-wine-dark mb-4 tracking-tight">Resultados Clínicos
+                </h2>
                 <div class="w-16 h-1 bg-brand-wine mx-auto mb-6 opacity-30"></div>
                 <p class="text-brand-gray text-base md:text-lg font-light leading-relaxed">
                     Casos reais de recuperação capilar assistida, devolvendo densidade, saúde e autoestima.
@@ -215,36 +267,50 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="group relative overflow-hidden rounded-3xl shadow-lg fade-element">
-                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Alopecia Frontal Fibrosante" class="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-wine-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Alopecia Frontal Fibrosante"
+                        class="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-brand-wine-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
                         <div>
                             <h4 class="text-white font-serif text-xl mb-1">Alopecia Frontal Fibrosante</h4>
                             <p class="text-brand-pink/80 text-xs uppercase tracking-widest">Controle e recuperação</p>
                         </div>
                     </div>
                 </div>
-                <div class="group relative overflow-hidden rounded-3xl shadow-lg fade-element" style="transition-delay: 100ms;">
-                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Alopecia Areata" class="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-wine-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+                <div class="group relative overflow-hidden rounded-3xl shadow-lg fade-element"
+                    style="transition-delay: 100ms;">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Alopecia Areata"
+                        class="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-brand-wine-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
                         <div>
                             <h4 class="text-white font-serif text-xl mb-1">Alopecia Areata</h4>
                             <p class="text-brand-pink/80 text-xs uppercase tracking-widest">Repilação assistida</p>
                         </div>
                     </div>
                 </div>
-                <div class="group relative overflow-hidden rounded-3xl shadow-lg fade-element" style="transition-delay: 200ms;">
-                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Alopecia Androgenética" class="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-wine-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+                <div class="group relative overflow-hidden rounded-3xl shadow-lg fade-element"
+                    style="transition-delay: 200ms;">
+                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Alopecia Androgenética"
+                        class="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-brand-wine-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
                         <div>
                             <h4 class="text-white font-serif text-xl mb-1">Alopecia Androgenética</h4>
-                            <p class="text-brand-pink/80 text-xs uppercase tracking-widest">Densidade e engrossamento</p>
+                            <p class="text-brand-pink/80 text-xs uppercase tracking-widest">Densidade e engrossamento
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="mt-12 text-center fade-element">
-                <a href="https://www.instagram.com/samilabergami/" target="_blank" class="inline-flex items-center text-brand-wine font-semibold hover:text-brand-wine-dark transition-all text-sm uppercase tracking-widest group">
-                    Explorar mais casos no Instagram <i class="fab fa-instagram ml-3 text-xl group-hover:rotate-12 transition-transform"></i>
+                <a href="https://www.instagram.com/samilabergami/" target="_blank"
+                    class="inline-flex items-center text-brand-wine font-semibold hover:text-brand-wine-dark transition-all text-[11px] md:text-sm uppercase tracking-widest group">
+                    Explorar mais casos no Instagram <i
+                        class="fab fa-instagram ml-3 text-xl group-hover:rotate-12 transition-transform"></i>
                 </a>
             </div>
         </div>
@@ -253,53 +319,71 @@
     <section id="servicos" class="py-24 bg-brand-offwhite">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-20 fade-element">
-                <h2 class="font-serif text-4xl text-brand-wine-dark mb-4 tracking-tight">Especialidades</h2>
+                <h2 class="font-serif text-3xl md:text-4xl text-brand-wine-dark mb-4 tracking-tight">Especialidades</h2>
                 <div class="w-16 h-1 bg-brand-wine mx-auto mb-6 opacity-30"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white rounded-3xl p-10 shadow-sm border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 fade-element group">
-                    <div class="w-14 h-14 bg-brand-pink rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-wine transition-colors">
+                <div
+                    class="bg-white rounded-3xl p-10 shadow-sm border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 fade-element group">
+                    <div
+                        class="w-14 h-14 bg-brand-pink rounded-xl flex items-center justify-center mb-8 group-hover:bg-brand-wine transition-colors">
                         <i class="fas fa-microscope text-xl text-brand-wine-dark group-hover:text-white"></i>
                     </div>
                     <h3 class="font-serif text-xl text-brand-wine-dark font-semibold mb-4">Tratamento de Alopecias</h3>
-                    <p class="text-brand-gray text-sm leading-relaxed font-light">Abordagem clínica para Frontal Fibrosante, Areata e Androgenética.</p>
+                    <p class="text-brand-gray text-sm leading-relaxed font-light">Abordagem clínica para Frontal
+                        Fibrosante, Areata e Androgenética.</p>
                 </div>
 
-                <div class="bg-white rounded-3xl p-10 shadow-sm border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 fade-element group" style="transition-delay: 100ms;">
-                    <div class="w-14 h-14 bg-brand-pink rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-wine transition-colors">
+                <div class="bg-white rounded-3xl p-10 shadow-sm border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 fade-element group"
+                    style="transition-delay: 100ms;">
+                    <div
+                        class="w-14 h-14 bg-brand-pink rounded-xl flex items-center justify-center mb-8 group-hover:bg-brand-wine transition-colors">
                         <i class="fas fa-spa text-xl text-brand-wine-dark group-hover:text-white"></i>
                     </div>
                     <h3 class="font-serif text-xl text-brand-wine-dark font-semibold mb-4">Terapia Capilar Avançada</h3>
-                    <p class="text-brand-gray text-sm leading-relaxed font-light">Desintoxicação, oxigenação e nutrição profunda do couro cabeludo.</p>
+                    <p class="text-brand-gray text-sm leading-relaxed font-light">Desintoxicação, oxigenação e nutrição
+                        profunda do couro cabeludo.</p>
                 </div>
 
-                <div class="bg-white rounded-3xl p-10 shadow-sm border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 fade-element group" style="transition-delay: 200ms;">
-                    <div class="w-14 h-14 bg-brand-pink rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-wine transition-colors">
+                <div class="bg-white rounded-3xl p-10 shadow-sm border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 fade-element group"
+                    style="transition-delay: 200ms;">
+                    <div
+                        class="w-14 h-14 bg-brand-pink rounded-xl flex items-center justify-center mb-8 group-hover:bg-brand-wine transition-colors">
                         <i class="fas fa-vial text-xl text-brand-wine-dark group-hover:text-white"></i>
                     </div>
                     <h3 class="font-serif text-xl text-brand-wine-dark font-semibold mb-4">Protocolo Exclusivo SB</h3>
-                    <p class="text-brand-gray text-sm leading-relaxed font-light">A sinergia perfeita entre química fina e cosmecêuticos de alta performance.</p>
+                    <p class="text-brand-gray text-sm leading-relaxed font-light">A sinergia perfeita entre química fina
+                        e cosmecêuticos de alta performance.</p>
                 </div>
 
-                <div class="bg-white rounded-3xl p-10 shadow-sm border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 fade-element group" style="transition-delay: 300ms;">
-                    <div class="w-14 h-14 bg-brand-pink rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-wine transition-colors">
+                <div class="bg-white rounded-3xl p-10 shadow-sm border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 fade-element group"
+                    style="transition-delay: 300ms;">
+                    <div
+                        class="w-14 h-14 bg-brand-pink rounded-xl flex items-center justify-center mb-8 group-hover:bg-brand-wine transition-colors">
                         <i class="fas fa-user-graduate text-xl text-brand-wine-dark group-hover:text-white"></i>
                     </div>
                     <h3 class="font-serif text-xl text-brand-wine-dark font-semibold mb-4">Cursos VIP Profissionais</h3>
-                    <p class="text-brand-gray text-sm leading-relaxed font-light">Mentoria exclusiva para profissionais que desejam dominar a tricologia.</p>
+                    <p class="text-brand-gray text-sm leading-relaxed font-light">Mentoria exclusiva para profissionais
+                        que desejam dominar a tricologia.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="py-28 bg-brand-wine text-center px-4 relative overflow-hidden">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-white/10 blur-[120px] rounded-full pointer-events-none"></div>
-        
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-white/10 blur-[120px] rounded-full pointer-events-none">
+        </div>
         <div class="max-w-4xl mx-auto fade-element relative z-10">
-            <h2 class="font-serif text-4xl md:text-6xl text-white mb-8">Pronta para recuperar a saúde dos seus fios?</h2>
-            <p class="text-brand-pink text-lg md:text-xl mb-12 font-light opacity-80 max-w-2xl mx-auto leading-relaxed">As vagas para avaliação capilar são limitadas em nossa agenda local e nacional. Reserve seu horário agora.</p>
-            <a href="https://wa.me/message/E22IIWJYFPYEO1" target="_blank" class="inline-block bg-white text-brand-wine-dark font-bold px-12 py-5 rounded-full hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 shadow-xl text-xs uppercase tracking-widest">
+            <h2 class="font-serif text-3xl md:text-6xl text-white mb-8">Pronta para recuperar a saúde dos seus fios?
+            </h2>
+            <p
+                class="text-brand-pink text-base md:text-xl mb-12 font-light opacity-80 max-w-2xl mx-auto leading-relaxed">
+                As vagas para avaliação capilar são limitadas em nossa agenda local e nacional. Reserve seu horário
+                agora.</p>
+            <a href="https://wa.me/message/E22IIWJYFPYEO1" target="_blank"
+                class="inline-block bg-white text-brand-wine-dark font-bold px-12 py-5 rounded-full hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 shadow-xl text-[11px] md:text-xs uppercase tracking-widest">
                 Agendar Minha Avaliação
             </a>
         </div>
@@ -311,53 +395,64 @@
                 <div>
                     <div class="flex items-center mb-6">
                         <i class="fas fa-spa text-brand-pink text-2xl mr-4 opacity-50"></i>
-                        <h2 class="font-serif text-2xl font-bold text-white tracking-widest uppercase">Samila Bergami</h2>
+                        <h2 class="font-serif text-xl md:text-2xl font-bold text-white tracking-widest uppercase">Samila
+                            Bergami</h2>
                     </div>
-                    <p class="text-brand-pink/60 text-sm leading-relaxed mb-10 font-light max-w-sm">
-                        Referência em Tricologia e Recuperação Capilar. Ciência e sofisticação para tratar seu couro cabeludo e fios.
+                    <p class="text-brand-pink/60 text-xs md:text-sm leading-relaxed mb-10 font-light max-w-sm">
+                        Referência em Tricologia e Recuperação Capilar. Ciência e sofisticação para tratar seu couro
+                        cabeludo e fios.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="https://www.instagram.com/samilabergami/" target="_blank" class="w-11 h-11 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-brand-wine-dark transition-all duration-300">
+                        <a href="https://www.instagram.com/samilabergami/" target="_blank"
+                            class="w-11 h-11 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-brand-wine-dark transition-all duration-300">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://www.instagram.com/samilabergami_belezaespa/" target="_blank" class="w-11 h-11 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-brand-wine-dark transition-all duration-300">
+                        <a href="https://www.instagram.com/samilabergami_belezaespa/" target="_blank"
+                            class="w-11 h-11 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-brand-wine-dark transition-all duration-300">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                     </div>
                 </div>
 
                 <div class="md:pl-10">
-                    <h3 class="text-white font-serif text-lg mb-8 tracking-widest uppercase opacity-40">Localização</h3>
+                    <h3
+                        class="text-white font-serif text-lg mb-8 tracking-widest uppercase opacity-40 text-sm md:text-lg">
+                        Localização</h3>
                     <ul class="space-y-6">
                         <li class="flex items-start">
                             <i class="fas fa-map-marker-alt text-brand-pink mt-1 mr-4 opacity-40"></i>
-                            <span class="text-brand-pink/70 text-sm font-light leading-relaxed">Rua Pedras Preciosas, 240<br>Iguaçu, Ipatinga - MG</span>
+                            <span class="text-brand-pink/70 text-xs md:text-sm font-light leading-relaxed">Rua Pedras
+                                Preciosas, 240<br>Iguaçu, Ipatinga - MG</span>
                         </li>
                         <li class="flex items-center">
                             <i class="fab fa-whatsapp text-brand-pink mr-4 opacity-40"></i>
-                            <span class="text-brand-pink/70 text-sm font-light">(31) 99999-9999</span>
+                            <span class="text-brand-pink/70 text-xs md:text-sm font-light">(31) 99999-9999</span>
                         </li>
                     </ul>
                 </div>
 
                 <div class="flex flex-col justify-center">
-                    <h3 class="text-white font-serif text-lg mb-8 tracking-widest uppercase opacity-40">Atendimento</h3>
-                    <a href="https://wa.me/message/E22IIWJYFPYEO1" target="_blank" class="bg-white/5 border border-white/10 text-white text-center font-bold py-5 px-8 rounded-2xl hover:bg-white hover:text-brand-wine-dark transition-all duration-500 text-xs uppercase tracking-widest">
+                    <h3
+                        class="text-white font-serif text-lg mb-8 tracking-widest uppercase opacity-40 text-sm md:text-lg">
+                        Atendimento</h3>
+                    <a href="https://wa.me/message/E22IIWJYFPYEO1" target="_blank"
+                        class="bg-white/5 border border-white/10 text-white text-center font-bold py-5 px-8 rounded-2xl hover:bg-white hover:text-brand-wine-dark transition-all duration-500 text-[10px] md:text-xs uppercase tracking-widest">
                         Fale conosco no WhatsApp
                     </a>
                 </div>
             </div>
 
             <div class="border-t border-white/5 pt-10 text-center">
-                <p class="text-[10px] text-brand-pink/30 font-light tracking-[0.2em] uppercase">
+                <p class="text-[9px] md:text-[10px] text-brand-pink/30 font-light tracking-[0.2em] uppercase">
                     &copy; 2026 Samila Bergami. Todos os direitos reservados.
                 </p>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/message/E22IIWJYFPYEO1" target="_blank" class="fixed bottom-8 right-8 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 z-50">
-        <i class="fab fa-whatsapp text-3xl"></i>
+    <a href="https://wa.me/message/E22IIWJYFPYEO1" target="_blank"
+        class="fixed bottom-6 md:bottom-8 right-6 md:right-8 bg-[#25D366] text-white w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 z-50">
+        <i class="fab fa-whatsapp text-2xl md:text-3xl"></i>
     </a>
 
     <script>
@@ -416,4 +511,5 @@
         });
     </script>
 </body>
+
 </html>
